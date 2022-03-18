@@ -18,7 +18,18 @@ const getUser = (userId) => {
   return users.filter(user => user.id === userId);
 }
 
+const getUserLogin = (email) => {
+  const user = users.filter((usr) => {
+      if (usr.email === email) {
+      return usr;
+    }
+  }).pop();
+  return user;
+ };
+ 
+
 export {
   users,
   getUser,
+  getUserLogin,
 }
